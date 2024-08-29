@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sappytech</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="photos/sappy new icon.ico">
+
+    <link rel="stylesheet" href="planes.css">
+</head>
+<body>
+    
+
+
+
+    <section class="pricing">
+        <div class="pricing-container">
+            <!-- Pricing Cards -->
+            <div class="pricing-card">
+                <div class="card-header">STANDARD 💼</div>
+                <p class="price">₹ 11,900 +GST</p>
+                <ul>
+                    <li>Basic Sales Feature 📊</li>
+                    <li>Basic Purchase Feature 🛒</li>
+                    <li>Voucher 🧾</li>
+                    <li>Account 📑</li>
+                    <li>GST Report 📉</li>
+                    <li>General Sale/Pur Report 📋</li>
+                    <li>Daily Report 📅</li>
+                    <li>Account Ledger 📘</li>
+                </ul>
+                <button class="buy-now" onclick="openForm('standard')">Buy Now 🛒</button>
+            </div>
+    
+
+
+            
+            <div class="pricing-card">
+                <div class="card-header">PRO 🚀</div>
+                <p class="price">₹ 17,500 +GST</p>
+                <ul>
+                    <li>All of Basic Feature 📊</li>
+                    <li>Sale With Serial Number and Details 🏷️</li>
+                    <li>Purchase with Suppliers Code, Agent Code 🛠️</li>
+                    <li>Company Related MIS Reports 📈</li>
+                    <li>Reports Register 📚</li>
+                    <li>Interest Calculation 📅</li>
+                </ul>
+                <button class="buy-now" onclick="openForm('PRO')">Buy Now 🛒</button>
+
+            </div>
+
+
+
+            
+            <div class="pricing-card">
+                <div class="card-header">PRO+ 🌟</div>
+                <p class="price">₹ 27,500 +GST</p>
+                <ul>
+                    <li>All of Basic and Pro Features 📊🚀</li>
+                    <li>Trade wise customization system ⚙️</li>
+                    <li>On Demand Feature request 📝</li>
+                </ul>
+                <button class="buy-now" onclick="openForm('PRO+')">Buy Now 🛒</button>
+                
+            </div>
+    
+
+
+
+
+            
+            <!-- Mobile Application Pricing -->
+            <div class="pricing-card">
+                <div class="card-header">OWNER APP 📱</div>
+                <p class="price">₹ 2,999 +GST</p>
+                <ul>
+                    <li>Daily Summary 📅</li>
+                    <li>All Party Ledger Access 📜</li>
+                    <li>Export Ledger in PDF 📄</li>
+                </ul>
+                <button class="buy-now" onclick="openForm('OWNER APP')">Buy Now 🛒</button>
+               
+            </div>
+    
+
+
+            
+            <div class="pricing-card">
+                <div class="card-header">SAPPY ORDER/INVOICE 🧾</div>
+                <p class="price">₹ 4,999 +GST</p>
+                <ul>
+                    <li>Take Order by Salesmen 📋</li>
+                    <li>Make On the Spot Billing/ POS Billing 💳</li>
+                    <li>Multiple Qty System 📦</li>
+                    <li>Sync Order Manual / Auto Sync 🔄</li>
+                    <li>Direct Bill Print on BlueTooth Printer 🖨️</li>
+                    <li>Party Ledger Access 📜</li>
+                </ul>
+                <button class="buy-now" onclick="openForm('sappyOrder')">Buy Now 🛒</button>
+            </div>
+
+            
+            <div class="pricing-card">
+                <div class="card-header">E-COMMERCE APP 🛒</div>
+                <p class="price">₹ 1,09,999 +GST</p>
+                <ul>
+                    <li>E-Mart/Grocery APP 🛒</li>
+                    <li>Customer Registration System 📝</li>
+                    <li>Displaying Product with image and price 🖼️</li>
+                    <li>Directly Order By Customer 🛍️</li>
+                    <li>Order Received on Software Panel 📈</li>
+                </ul>
+                <button class="buy-now" onclick="openForm('ecommerceApp')">Buy Now 🛒</button>
+            </div>
+        </div>
+            <!-- Other Pricing Cards Here... -->
+    
+        </div>
+    </section>
+    
+    <!-- Modal Form Structure -->
+    <div id="buyFormModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeForm()">&times;</span>
+            <h2>Buy Now - <span id="planName">STANDARD 💼</span></h2>
+            <form id="buyForm" onsubmit="submitForm(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea>
+                
+                <input type="hidden" id="selectedPlan" name="selectedPlan">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+          
+   <script src="planes.js"></script>
+    
+</body>
+</html>

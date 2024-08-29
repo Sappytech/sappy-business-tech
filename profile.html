@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    
+    <!-- <div id="loading">
+        <div class="loader">
+            <img src="photos/afterlogin loding gif.gif" alt="Loading...">
+            <h2>simplify your business  </h2>
+            <h6>Please Wait Application is Starting..........</h6>
+        </div>
+    </div>    -->
+    
+    <h1>User Profile</h1>
+    <div id="userProfile"></div>
+
+    <script>
+        // Retrieve user data from localStorage
+        const profileData = JSON.parse(localStorage.getItem('profileData'));
+
+        // Display user information
+        if (profileData && Object.keys(profileData).length > 0) {
+            const profileElement = document.getElementById('userProfile');
+            
+            // Create a list of user details
+            const userDetailsList = document.createElement('ul');
+            for (const [key, value] of Object.entries(profileData)) {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${key}: ${value}`;
+                userDetailsList.appendChild(listItem);
+            }
+
+            profileElement.appendChild(userDetailsList);
+        } else {
+            document.getElementById('userProfile').textContent = 'No user information available. Please complete the sign-up or sign-in process.';
+        }
+    </script>
+</body>
+</html>

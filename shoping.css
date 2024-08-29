@@ -1,0 +1,509 @@
+
+
+/* Default styles for desktop */
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.loader img {
+  width: 200px;
+  height: 200px;
+  margin-top: -20px;
+  /* animation: rotate 2s linear infinite; */
+}
+
+.loader h2 {
+  color: #222;
+  margin-top: -10px;
+}
+.loader h6{
+  margin-top: -5px;
+  color:#111;
+
+}
+
+#content {
+  display: none;
+  text-align: center;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #00ccff;
+  animation: fadeIn 2s ease-in-out;
+}
+
+p {
+  font-size: 18px;
+  color: #ccc;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Styles for tablets */
+@media (max-width: 768px) {
+  .loader img {
+    width: 200px;
+    height: 150px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Styles for mobile phones */
+@media (max-width: 480px) {
+  .loader img {
+    width: 140px;
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  #content {
+    padding: 20px;
+  }
+}
+
+
+.header {
+  width: 100%;
+  padding: 20px;
+  /* background: linear-gradient(90deg, #000033, #000066); */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  background-color: #fff492;
+
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30px;
+
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  animation: fadeInLeft 2.5s ease-in-out;
+  color: #000033;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  animation: fadeInRight 3s ease-in-out;
+}
+
+.nav-links a {
+  color: #000066;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #000099;
+  color: #fff;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #0000cc;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0000ff;
+}
+
+
+
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  margin-right: 20px;
+}
+
+.burger div {
+  width: 30px;
+  height: 4px;
+  background-color: #000066;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      height: 250px;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      /* background-color: #000066; */
+      background-color: #000099;
+  }
+
+  .nav-links.active {
+      display: flex;
+      color: #000066;
+  }
+
+  .burger {
+      display: flex;
+  }
+  .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+      background-color: #000066;
+      color: #fff;
+  }
+  .burger.toggle .line1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .burger.toggle .line2 {
+      opacity: 0;
+  }
+
+  .burger.toggle .line3 {
+      transform: rotate(45deg) translate(-5px, -6px);
+  }
+ 
+  
+}
+
+/* Keyframes for animations */
+@keyframes fadeInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+      opacity: 0;
+      transform: translateX(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+  
+   
+}
+
+.product-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0px; /* Reduced padding for a smaller box */
+    width: 250px;  /* Reduced width for a smaller box */
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-name {
+    font-size: 1.1em; /* Adjusted font size for smaller box */
+    margin: 8px 0;    /* Reduced margin for a smaller box */
+}
+
+.product-rating {
+    margin: 8px 0;    /* Reduced margin for a smaller box */
+}
+
+.product-info {
+    margin: 8px 0;    /* Reduced margin for a smaller box */
+}
+
+.product-price {
+    font-size: 1.2em; /* Adjusted font size for smaller box */
+    color: #333;
+}
+
+.product-offer {
+    display: block;
+    color: #e74c3c;
+    margin: 4px 0;    /* Reduced margin for a smaller box */
+}
+
+.product-users {
+    display: block;
+    color: #555;
+}
+
+.product-buttons {
+    margin-top: 8px;  /* Reduced margin for a smaller box */
+}
+
+.cart-button, .buy-button {
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px; /* Reduced padding for a smaller box */
+    margin: 4px;      /* Reduced margin for a smaller box */
+    cursor: pointer;
+    font-size: 0.9em; /* Adjusted font size for smaller box */
+    transition: background-color 0.3s;
+}
+
+.cart-button {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.cart-button:hover {
+    background-color: #2980b9;
+}
+
+.buy-button {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.buy-button:hover {
+    background-color: #d35400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-box {
+        width: 100%;
+    }
+}
+
+
+
+/* Styles for the forms */
+.form-container {
+    display: none; /* Hide forms by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.form-container h3 {
+    color: #fff;
+}
+
+.form-container form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    width: 500px;
+    position: relative; /* To position the close button inside */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Adjustments for input and textarea */
+.form-container label {
+    display: block;
+    margin-top: 10px;
+}
+
+.form-container input, .form-container textarea {
+    width: 100%; /* Full width for responsive design */
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Submit button styles */
+.form-container .submit-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%; /* Full width for mobile devices */
+}
+
+.form-container .submit-button:hover {
+    background-color: #2980b9;
+}
+
+/* Close button styles */
+.form-container .close-btn {
+    position: absolute;
+    top: 160px; /* Adjust top to be close to the form's top edge */
+    right: 440px; /* Adjust right to be close to the form's right edge */
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    
+
+    border-radius: 50%;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    display: block;
+}
+
+/* Responsive styles */
+
+
+@media (max-width: 1200px) {
+    .form-container form {
+        width: 90%;
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+    .form-container .close-btn {
+      
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        top: 150px;
+        right: 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

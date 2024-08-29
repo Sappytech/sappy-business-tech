@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Info & Features</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="photos/sappy new icon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+
+
+/* Default styles for desktop */
+#loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .loader img {
+    width: 200px;
+    height: 200px;
+    margin-top: -20px;
+    /* animation: rotate 2s linear infinite; */
+  }
+  
+  .loader h2 {
+    color: #222;
+    margin-top: -10px;
+  }
+  .loader h6{
+    margin-top: -5px;
+    color:#111;
+  
+  }
+  
+  #content {
+    display: none;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    color: #00ccff;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #ccc;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Styles for tablets */
+  @media (max-width: 768px) {
+    .loader img {
+      width: 200px;
+      height: 150px;
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    p {
+      font-size: 16px;
+    }
+  }
+  
+  /* Styles for mobile phones */
+  @media (max-width: 480px) {
+    .loader img {
+      width: 140px;
+      height: 100px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    p {
+      font-size: 14px;
+    }
+  
+    #content {
+      padding: 20px;
+    }
+  }
+  
+  
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .info-box {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 700px;
+            text-align: left;
+            transition: transform 0.3s ease;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-box h2 {
+            font-size: 28px;
+            color: #ff6600;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-box h2 .fas {
+            margin-right: 10px;
+        }
+
+        .info-box h2 .first-letter {
+            font-size: 38px;
+            font-weight: bold;
+        }
+
+        .info-box p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .info-box p i {
+            color: #ff6600;
+            margin-right: 8px;
+        }
+
+        .info-box a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #ff6600;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .info-box a:hover {
+            background-color: #e65c00;
+        }
+
+        .more-info {
+            margin-top: 20px;
+            background-color: #fafafa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .more-info h3 {
+            color: #ff6600;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .more-info p {
+            font-size: 14px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .more-info img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-top: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .why-choose-us h1 {
+            font-size: 28px;
+            color: #ff6600;
+            margin-bottom: 20px;
+        }
+
+        .feature-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-item {
+            margin-bottom: 15px;
+            background-color: #fafafa;
+            border-radius: 8px;
+            padding: 15px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-item:hover {
+            background-color: #ffefdb;
+        }
+
+        .feature-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .feature-header h2 {
+            font-size: 20px;
+            color: #ff6600;
+            margin: 0;
+        }
+
+        .toggle-icon {
+            font-size: 20px;
+            color: #ff6600;
+        }
+
+        .feature-details {
+            display: none;
+            padding-top: 10px;
+        }
+
+        .feature-details p {
+            font-size: 14px;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .info-box, .why-choose-us {
+                padding: 15px;
+            }
+
+            .info-box h2, .why-choose-us h1 {
+                font-size: 24px;
+            }
+
+            .info-box p, .feature-details p {
+                font-size: 14px;
+            }
+
+            .info-box a {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+
+            .more-info h3, .feature-header h2 {
+                font-size: 20px;
+            }
+
+            .more-info p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- 
+    <div id="loading">
+        <div class="loader">
+            <img src="photos/infoboxess loding gif.gif" alt="Loading...">
+             <h2>simplify your business  </h2>
+            <h6>Please Wait Application is Starting..........</h6> 
+        </div>
+    </div>   
+     -->
+
+
+
+    <div class="info-box">
+        <h2><i class="fas fa-info-circle"></i> <span class="first-letter">S</span>ale/Purchase Order Operations</h2>
+        <p><i class="fas fa-check-circle"></i> Sappy provides comprehensive Sale/Purchase Order operations, allowing businesses to efficiently manage pre-orders, streamline stock transactions, and maintain accurate product stock levels in real-time. Our system ensures that every transaction is validated to minimize errors, improving overall accuracy and reliability.</p>
+        <p><i class="fas fa-check-circle"></i> The platform offers robust features such as automated notifications to keep stakeholders updated on stock changes, and advanced reporting tools that help in making data-driven decisions.</p>
+        <p><i class="fas fa-check-circle"></i> Whether you are a small business or a large enterprise, Sappy scales to meet your needs, offering a seamless experience that integrates with your existing systems. Additionally, we provide an easy installation process, and you can benefit from a Free Trial to explore all features before committing.</p>
+        <p><i class="fas fa-check-circle"></i> With Sappy, you also gain access to world-class customer support and regular updates, ensuring your operations stay ahead of the curve with the latest technological advancements.</p>
+              
+        <!-- <a href="#">Learn More <i class="fas fa-arrow-right"></i></a> -->
+        
+        <!-- More Information Section -->
+        <div class="more-info">
+            <h3>Why Choose Sappy for Order Operations?</h3>
+            <p>At Sappy, we understand the critical importance of managing your sales and purchase orders efficiently. Our platform ensures that your pre-orders are handled seamlessly, while keeping your stock levels updated in real-time.</p>
+            <img src="photos/Sappy for Order Operations.jpg" alt="Order Management">
+            <p>With our intuitive dashboard, you can track every transaction, ensuring that no detail is missed. Whether you're managing a small business or a large enterprise, Sappy is designed to scale with your needs, offering features that help you stay on top of your game.</p>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <h1>Why Choose Us</h1>
+        <div class="feature-container">
+            <div class="feature-item">
+                <div class="feature-header" onclick="toggleDetails('gstInvoices')">
+                    <h2>GST Invoices & Billing</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="feature-details" id="gstInvoices">
+                    <p>Generate GST Compliant Invoices very fast and with validation, check errors and update users. Improve billing speed and make it easy to understand.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-header" onclick="toggleDetails('gstReports')">
+                    <h2>GST Reports & Return Filing</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="feature-details" id="gstReports">
+                    <p>Generate GST Reports GSTR1, GSTR2, GSTR3B, GSTR4, and GSTR9 in one click and validate before report generation. Create JSON, EXCEL, CSV files and directly submit to the GST portal.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-header" onclick="toggleDetails('dataExport')">
+                    <h2>Data Export to Tally</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="feature-details" id="dataExport">
+                    <p>Export invoice data from Sappy ERP to Tally XML files with just one click and synchronize with Tally and Sappy ERP.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-header" onclick="toggleDetails('multiLocation')">
+                    <h2>Multi Location/Branch Management</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="feature-details" id="multiLocation">
+                    <p>Manage warehouses and branches with high speed and error-free operations, synchronizing stock, account balances, and billing.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-header" onclick="toggleDetails('customisedSupport')">
+                    <h2>Highly Customised & User Friendly</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="feature-details" id="customisedSupport">
+                    <p>Experience a user-friendly UI and operations that are highly customizable according to business or trade requirements. Enjoy cutting-edge technology for easy daily operations.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-header" onclick="toggleDetails('techSupport')">
+                    <h2>Technical (Online/Offline) Support</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="feature-details" id="techSupport">
+                    <p>Receive top-notch service support from our skilled team to resolve technical issues, accounting problems, and GST-related consultancy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleDetails(featureId) {
+            var details = document.getElementById(featureId);
+            var icon = details.previousElementSibling.querySelector('.toggle-icon');
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+                icon.textContent = "-";
+            } else {
+                details.style.display = "none";
+                icon.textContent = "+";
+            }
+        }
+    </script>
+</body>
+</html>
